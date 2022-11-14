@@ -1,0 +1,33 @@
+{
+  "name": "@codecb/event-emitter",
+  "version": "0.0.1",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "email": "icodemyownlife@gmail.com",
+    "name": "ICodeMyOwnLife"
+  },
+  "repository": {
+    "directory": "packages/event-emitter",
+    "type": "git",
+    "url": "https://github.com/code-cb/events.git"
+  },
+  "files": [
+    "./dist"
+  ],
+  "exports": "./dist/index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && tsc -p ./tsconfig.build.json",
+    "example:01-using-directly": "ts-node-esm examples/01-using-directly.ts",
+    "example:02-creating-subclass": "ts-node-esm examples/02-creating-subclass.ts",
+    "format": "prettier --write '{src,test}/**/*.ts'",
+    "prepublishOnly": "yarn build",
+    "test": "jest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@codecb/ts-utils": "0.6.1"
+  }
+}
