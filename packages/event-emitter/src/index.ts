@@ -81,21 +81,6 @@ export class EventEmitter<
   }
 
   /**
-   * Add a listener for a given event
-   * @param eventName The event name
-   * @param listener The listener function
-   * @param context The context to invoke the listener with
-   * @returns `this`
-   */
-  on<EventName extends keyof EventTypes>(
-    eventName: EventName,
-    listener: EventTypes[EventName],
-    context?: Context,
-  ): this {
-    return this.#addEventObject(eventName, listener, context, false);
-  }
-
-  /**
    * Remove the listeners of a given event
    * @param eventName The event name
    * @param listener Only remove the listeners that match this function
@@ -110,6 +95,21 @@ export class EventEmitter<
     once = false,
   ): this {
     return this.#removeEventObjects(eventName, listener, context, once);
+  }
+
+  /**
+   * Add a listener for a given event
+   * @param eventName The event name
+   * @param listener The listener function
+   * @param context The context to invoke the listener with
+   * @returns `this`
+   */
+  on<EventName extends keyof EventTypes>(
+    eventName: EventName,
+    listener: EventTypes[EventName],
+    context?: Context,
+  ): this {
+    return this.#addEventObject(eventName, listener, context, false);
   }
 
   /**
