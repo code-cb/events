@@ -1,7 +1,7 @@
 {
   "name": "@codecb/event-emitter",
   "version": "0.0.1",
-  "description": "A rewrite of EventEmitter3, ported to TypeScript and ES module",
+  "description": "A rewrite of `EventEmitter3`, ported to TypeScript and ES module",
   "type": "module",
   "license": "MIT",
   "author": {
